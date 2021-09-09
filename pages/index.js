@@ -239,7 +239,7 @@ function	Attributes({rarity, updateRarity, provider}) {
 					{updateAttribute.remainingPoints === 0 ?
 						'▶ 保存属性点 ! ◀'
 						:
-						`▶ 你有 ${updateAttribute.remainingPoints} 属性点待分配 !`
+						`▶ 你有 ${updateAttribute.remainingPoints} 属性点待分配!`
 					}
 				</p>
 			) : null}
