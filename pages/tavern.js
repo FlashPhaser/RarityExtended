@@ -118,34 +118,38 @@ function	Class({provider, rarityClass, fetchRarity, router}) {
 	);
 }
 
-return (
-	<section className={'mt-12'}>
+function	Index({fetchRarity, router}) {
+	const	{provider} = useWeb3();
+	const	[option, set_option] = useState(0);
 
-		<div className={'max-w-screen-lg w-full mx-auto'}>
-			<h1 className={'font-title text-lg uppercase justify-center mb-4'}>{'远方的旅人，欢迎你来到冒险者招募营地！'}</h1>
-			<p className={'font-title text-base uppercase'}>{'你想要做点什么呢 ?'}</p>
-			<div className={'nes-container mt-6 font-title uppercase text-sm space-y-8 mb-8'}>
-				<div>
-					<label>
-						<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(0)} checked={option === 0} />
-						<span>{'招募一名新的冒险者'}</span>
-					</label>
-				</div>
-				<div>
-					<label>
-						<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(2)} checked={option === 2} />
-						<span>{'招募多名新的冒险者(内测中，目前功能尚未开通)'}</span>
-					</label>
-				</div>
-				<div>
-					<label>
-						<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(1)} checked={option === 1}/>
-						<span>{'什么也不做'}</span>
-					</label>
-				</div>
-			</div>
+	return (
+		<section className={'mt-12'}>
 
-			<div className={`flex flex-row w-full flex-wrap items-center justify-center ${option !== 0 ? 'hidden': ''}`}>
+			<div className={'max-w-screen-lg w-full mx-auto'}>
+				<h1 className={'font-title text-lg uppercase justify-center mb-4'}>{'远方的旅人，欢迎你来到冒险者招募营地！'}</h1>
+				<p className={'font-title text-base uppercase'}>{'你想要做点什么呢 ?'}</p>
+				<div className={'nes-container mt-6 font-title uppercase text-sm space-y-8 mb-8'}>
+					<div>
+						<label>
+							<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(0)} checked={option === 0} />
+							<span>{'招募一名新的冒险者'}</span>
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(2)} checked={option === 2} />
+							<span>{'招募多名新的冒险者(内测中，目前功能尚未开通)'}</span>
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(1)} checked={option === 1}/>
+							<span>{'什么也不做'}</span>
+						</label>
+					</div>
+				</div>
+
+				<div className={`flex flex-row w-full flex-wrap items-center justify-center ${option !== 1 ? 'hidden': ''}`}>
 					<div className={'flex flex-col md:flex-row w-full justify-center md:justify-between mb-2 md:mb-8'}>
 						<Class router={router} provider={provider} fetchRarity={fetchRarity} rarityClass={classes['Barbarian']} />
 						<Class router={router} provider={provider} fetchRarity={fetchRarity} rarityClass={classes['Bard']} />
@@ -178,6 +182,7 @@ return (
 
 				<textarea name="description" id="log" cols="80" rows="15">招募记录</textarea>
 				</div>
+
 			</div>
 
 		</section>
