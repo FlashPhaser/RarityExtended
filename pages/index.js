@@ -73,11 +73,11 @@ function	DailyBalloon({rarity, chainTime, provider, updateRarity}) {
 										updateRarity(data);
 									});
 								}} />
-							<span>{'Yes'}</span>
+							<span>{'好的！'}</span>
 						</label>
 						<label className={'ml-6'}>
 							<input type={'radio'} className={'nes-radio'} name={`${rarity.tokenID}_adventure`} onClick={() => canGold ? set_ask(1) : null}/>
-							<span>{'no'}</span>
+							<span>{'先不了'}</span>
 						</label>
 					</div>
 				</div>
