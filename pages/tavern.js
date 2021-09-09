@@ -145,9 +145,9 @@ function	Index({fetchRarity, router}) {
 							</label>
 						</div>
 						<div>
-						<label>
-							<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(2)} checked={option === 2} />
-							<span>{'招募多名冒险者(内测中，目前功能尚未开通)'}</span>
+						   <label>
+							   <input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(2)} checked={option === 2} />
+							   <span>{'招募多名冒险者(内测中，目前功能尚未开通)'}</span>
 						</label>
 					</div>
 						<div>
