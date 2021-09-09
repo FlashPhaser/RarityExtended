@@ -53,7 +53,7 @@ function	DailyBalloon({rarity, chainTime, provider, updateRarity}) {
 		return (
 			<div className={'nes-balloon relative from-left text-xs md:text-base'}>
 				<div className={'mb-2'}>
-					{'Would you like to go in an adventure ?'}
+					{'现在想要开始一次冒险吗?'}
 					<div className={'mt-6'}>
 						<label>
 							<input
@@ -91,7 +91,7 @@ function	DailyBalloon({rarity, chainTime, provider, updateRarity}) {
 		return (
 			<div className={'nes-balloon relative from-left text-xs md:text-base '}>
 				<div className={'mb-2'}>
-					{`Would you like to claim your ${Number(rarity?.gold?.claimable)} golds ?`}
+					{`是否要领取得到的 ${Number(rarity?.gold?.claimable)} 金币 ?`}
 					<div className={'mt-6'}>
 						<label>
 							<input
@@ -111,7 +111,7 @@ function	DailyBalloon({rarity, chainTime, provider, updateRarity}) {
 										updateRarity(data);
 									});
 								}} />
-							<span>{'Claim'}</span>
+							<span>{'领取'}</span>
 						</label>
 					</div>
 				</div>
@@ -124,7 +124,7 @@ function	DailyBalloon({rarity, chainTime, provider, updateRarity}) {
 
 	return (
 		<div className={'nes-balloon relative from-left text-xs md:text-base'}>
-			<p>{`Next adventure ready ${dayjs(new Date(rarity.log * 1000)).from(dayjs(new Date(chainTime * 1000)))}`}</p>
+			<p>{`我需要休息，下一次冒险最快也得： ${dayjs(new Date(rarity.log * 1000)).from(dayjs(new Date(chainTime * 1000)))}`}</p>
 		</div>
 	);
 }
@@ -233,13 +233,13 @@ function	Attributes({rarity, updateRarity, provider}) {
 
 	return (
 		<div className={'nes-container with-title w-full md:w-1/3 -mt-1 md:mt-0'}>
-			<div className={'title mb-1'}>{'Attributes'}</div>
+			<div className={'title mb-1'}>{'人物属性'}</div>
 			{updateAttribute.remainingPoints >= 0 ? (
 				<p onClick={buyPoints} className={` text-xss border-t-2 border-b-2 border-black py-1 my-2 ${updateAttribute.remainingPoints === 0 ? 'animate-pulse text-center cursor-pointer hover:bg-black hover:animate-none hover:text-white' : ''}`}>
 					{updateAttribute.remainingPoints === 0 ?
-						'▶ Save you stats ! ◀'
+						'▶ 保存属性点 ! ◀'
 						:
-						`▶ You have ${updateAttribute.remainingPoints} points to spend !`
+						`▶ 你有 ${updateAttribute.remainingPoints} 属性点待分配 !`
 					}
 				</p>
 			) : null}
