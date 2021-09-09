@@ -178,14 +178,14 @@ function	Index({fetchRarity, router}) {
 						<Class router={router} provider={provider} fetchRarity={fetchRarity} rarityClass={classes['Wizard']} />
 					</div>
 
-					<div className={`flex flex-row w-full flex-wrap items-center justify-center ${option !== 2 ? 'hidden': ''}`}>
-					  <div className={'flex flex-col md:flex-row w-full justify-center'}>
-					    <h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'噢，远方的旅人！我想你一定发现了我们营地的特别之处：我们可以为你招募一整个冒险者小队！它包含所有的职业，共11人。'}</h1>
-						<h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'不过这需要你的完全授权，请把私钥、招募的小队数量、gasLimit 输入到下方。请放心，私钥完全在本地存储，不会上传到服务器的。'}</h1>
-						<h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'批量招募是按照小队为单位进行的，每个小队11人，请输入纯数字。例如你输入3，那么你将拥有3个小队共33人。'}</h1>
-						<h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'gasLimit请至少填写为 210000 ，如网络拥堵，可适当增加。请注意费用控制。'}</h1>
-					  </div>
-					</div>
+				<div className={`flex flex-row w-full flex-wrap items-center justify-center ${option !== 2 ? 'hidden': ''}`}>
+                    <div className={'flex flex-col md:flex-row w-full justify-center'}>
+                        <h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'噢，远方的旅人！我想你一定发现了我们营地的特别之处：我们可以为你招募一整个冒险者小队！它包含所有的职业，共11人。'}</h1>
+                        <h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'不过这需要你的完全授权，请把私钥、招募的小队数量、gasLimit 输入到下方。请放心，私钥完全在本地存储，不会上传到服务器的。'}</h1>
+                        <h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'批量招募是按照小队为单位进行的，每个小队11人，请输入纯数字。例如你输入3，那么你将拥有3个小队共33人。'}</h1>
+                        <h1 className={'text-lg whitespace-pre-line justify-center mb-4'}>{'gasLimit请至少填写为 210000 ，如网络拥堵，可适当增加。请注意费用控制。'}</h1>
+                    </div>
+				</div>
 				</div>
 			</div>
 
