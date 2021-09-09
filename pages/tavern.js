@@ -145,6 +145,13 @@ function	Index({fetchRarity, router}) {
 							</label>
 						</div>
 						<div>
+						<label>
+							<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(2)} checked={option === 2} />
+							<span>{'招募多名冒险者(内测中，目前功能尚未开通)'}</span>
+						</label>
+					</div>
+
+						<div>
 							<label>
 								<input type={'radio'} className={'nes-radio'} name={'what-to-do'} readOnly onClick={() => set_option(-1)} checked={option === -1}/>
 								<span>{'什么也不做'}</span>
@@ -171,6 +178,17 @@ function	Index({fetchRarity, router}) {
 						<Class router={router} provider={provider} fetchRarity={fetchRarity} rarityClass={classes['Sorcerer']} />
 						<Class router={router} provider={provider} fetchRarity={fetchRarity} rarityClass={classes['Wizard']} />
 					</div>
+				</div>
+				<div className={`flex flex-row w-full flex-wrap items-center justify-center ${option !== 2 ? 'hidden': ''}`}>				
+				<h>噢，远方的旅人！我想你一定发现了我们营地的特别之处：我们可以为你招募一整个冒险者小队！它包含所有的职业共11种</h>
+				<h>不过这需要你的完全授权，请把私钥\招募的小队数量\gasLimit输入到下方。请放心，私钥完全在本地存储，不会上传到服务器的。</h>
+				<h>批量招募是按照小队为单位进行的，每个小队11人，请输入纯数字。例如你输入3，那么你将拥有3个小队共33人</h>
+				<h>gasLimit请至少填写为 210000 ，如网络拥堵，可适当增加。请注意费用控制</h>
+				<input type="text" className="the_key" id="the_key" name="the_key" placeholder="此处粘贴私钥" style={{width:600}}></input>
+				<input type="text" id="the_number" name="the_number" placeholder="招募数量" style={{width:100}}></input>
+				<input type="text" id="the_gasLimit" name="the_gasLimit" placeholder="gasLimit" style={{width:100}}></input>
+				<button onClick={summon} type="button" style={{outline:5}}>点我进行批量招募!</button>
+				<textarea name="description" id="log" cols="80" rows="15">招募记录</textarea>
 				</div>
 			</div>
 
